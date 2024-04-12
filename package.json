@@ -1,0 +1,23 @@
+{
+  "name": "nestjs-nextjs-monorepo",
+  "version": "1.0.0",
+  "description": "Mono repo",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm:dev:api\" \"npm:dev:web\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:api": "cd apps/api && npm run dev",
+    "dev:web": "cd apps/web && npm run dev"
+  },
+  "author": "Zulfiqar Ali Langah",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/config": "^3.2.2",
+    "@trpc/server": "^10.45.2",
+    "create-next-app": "^14.2.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
