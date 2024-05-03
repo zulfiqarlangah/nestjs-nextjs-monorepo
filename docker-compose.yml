@@ -1,0 +1,21 @@
+version: "3"
+services:
+  web-app:
+    container_name: monorepo-web-app
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    restart: always
+    ports:
+      - 4100:3000
+
+  api-app:
+    container_name: monorepo-api-app
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+      args:
+        - APP=API
+    restart: always
+    ports:
+      - 4101:4000
